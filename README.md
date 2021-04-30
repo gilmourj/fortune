@@ -1,4 +1,4 @@
-fortune: Display thank you quotes
+fortune: Display random quotes
 ==============================
 
 ## Introduction
@@ -9,7 +9,11 @@ it's similar to the BSD fortune program originally written by [Ken Arnold][].
 Unlike Arnold's program, this version is written in [Python][] and should
 run anywhere there's a Python interpreter.
 
-For installation and usage instructions, please see the [web page][].
+Slight modifications to allow for all quotes to be displayed and to change
+some package-specific conventions.
+
+To run, clone the repo and, from the parent directory, run 
+`python fortune [filepath]` or `python fortune -h` for help.
 
 [Ken Arnold]: http://en.wikipedia.org/wiki/Ken_Arnold
 [Python]: http://www.python.org/
