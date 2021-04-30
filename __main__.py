@@ -192,7 +192,7 @@ def main():
         elif options.print_all:
             get_all_fortunes(fortune_file)
         else:
-            print(get_random_fortune(fortune_file))
+            print('\n' + get_random_fortune(fortune_file), end='\n\n')
     except ValueError as msg:
         print(msg, file=sys.stderr)
         sys.exit(1)
