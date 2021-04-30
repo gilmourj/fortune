@@ -156,6 +156,11 @@ def get_random_fortune(fortune_file):
     randomRecord = _random_int(0, len(fortunes) - 1)
     return fortunes[randomRecord]
 
+def get_all_fortunes(fortune_file):
+    fortunes = list(_read_fortunes(fortune_file))
+    for l in fortunes:
+        print('\n\n' + l)
+
 def main():
     """
     Main program.
@@ -164,6 +169,8 @@ def main():
     arg_parser = OptionParser(usage=usage)
     arg_parser.add_option('-V', '--version', action='store_true',
                           dest='show_version', help='Show version and exit.')
+    arg_parser.add_option('-A', '--all', action='store_true',
+                          dest='print_all', help='Show all fortunes')
     arg_parser.epilog = 'If fortune_file is omitted, fortune looks at the ' \
                         'FORTUNE_FILE environment variable for the path.'
 
@@ -182,6 +189,8 @@ def main():
     try:
         if options.show_version:
             print('fortune, version {}'.format(__version__))
+        elif options.print_all:
+            get_all_fortunes(fortune_file)
         else:
             print(get_random_fortune(fortune_file))
     except ValueError as msg:
