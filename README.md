@@ -1,4 +1,4 @@
-fortune: Display random quotes
+fortune: Display thank you quotes
 ==============================
 
 ## Introduction
